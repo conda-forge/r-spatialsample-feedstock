@@ -1,6 +1,5 @@
 {% set version = '0.6.0' %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-spatialsample
@@ -13,8 +12,7 @@ source:
   sha256: 201031bc89016abbcd268f044af4f00212268c0b8a0f6602980babe5ce6c8c7b
 
 build:
-  merge_build_host: True  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -22,7 +20,8 @@ build:
     - '*/R.dll'        # [win]
     - '*/Rblas.dll'    # [win]
     - '*/Rlapack.dll'  # [win]
-  skip: true  # [win]
+  # Checking windows to see if it passes. Uncomment the line if it fails.
+  # skip: true  # [win]
 
 requirements:
   build:
@@ -54,7 +53,6 @@ requirements:
     - r-vctrs >=0.3.6
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-cpp11
     - r-dplyr >=1.0.0
     - r-ggplot2
