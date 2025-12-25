@@ -1,4 +1,4 @@
-{% set version = '0.6.0' %}
+{% set version = "0.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,10 +9,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spatialsample_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatialsample/spatialsample_{{ version }}.tar.gz
-  sha256: 201031bc89016abbcd268f044af4f00212268c0b8a0f6602980babe5ce6c8c7b
+  sha256: 22a6e68e2c83bc389591c75745e1197b3c631ee8dd9d9d3d01d60c49ae89675f
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -75,12 +75,8 @@ about:
   home: https://spatialsample.tidymodels.org
   dev_url: https://github.com/tidymodels/spatialsample
   license: MIT
-  summary: Functions and classes for spatial resampling to use with the 'rsample' package, such
-    as spatial cross-validation (Brenning, 2012) <doi:10.1109/IGARSS.2012.6352393>.
-    The scope of 'rsample' and 'spatialsample' is to provide the basic building blocks
-    for creating and analyzing resamples of a spatial data set, but neither package
-    includes functions for modeling or computing statistics. The resampled spatial data
-    sets created by 'spatialsample' do not contain much overhead in memory.
+  summary: Functions and classes for spatial resampling to use with the 'rsample' package, such as spatial cross-validation (Brenning, 2012) <doi:10.1109/IGARSS.2012.6352393>. The scope of 'rsample' and 'spatialsample' is to provide the basic building blocks for creating and analyzing resamples of a spatial data set, but
+    neither package includes functions for modeling or computing statistics. The resampled spatial data sets created by 'spatialsample' do not contain much overhead in memory.
   license_family: MIT
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
